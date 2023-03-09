@@ -3,10 +3,11 @@ window.onload=main
 function main() {
     // alert('Hello, World!')
 
-    const numElements = 50000;
+    const numElements = 50000000;
     const sortedData = createSortedData(numElements);
-    document.body.innerHTML = numElements + " elements: " + sortedData;
-    console.log(sortedData);
+    document.body.innerHTML = numElements + " elements: ";
+    // + sortedData;
+    // console.log(sortedData);
 
     const targetElement = sortedData[Math.floor(sortedData.length * Math.random())];
     document.body.innerHTML += "<br/>";
@@ -79,9 +80,9 @@ function searchBinary(targetElement, sortedData) {
         }
 
         if (candidate < targetElement) {
-            endIndex = midpoint - 1;
-        } else {
             startIndex = midpoint + 1;
+        } else {
+            endIndex = midpoint - 1;
         }
 
     } while (endIndex > startIndex);
